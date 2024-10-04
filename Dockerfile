@@ -5,10 +5,10 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Update package list and install gcc
-RUN apt-get update && apt-get install -y gcc make
+RUN apt-get update && apt-get install -y gcc g++ make 
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app/src
 
 # Command to run bash by default (you can override this)
 CMD ["/bin/bash"]
