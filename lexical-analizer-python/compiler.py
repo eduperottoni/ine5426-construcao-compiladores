@@ -45,7 +45,6 @@ class LexicalAnalyser:
                 else:
                     self.current_state = 3
                     pointer_position += 1
-
             else:
                 self.output.append('OUTRO')
                 self.current_state = 0

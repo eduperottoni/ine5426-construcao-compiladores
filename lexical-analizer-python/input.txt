@@ -1,4 +1,4 @@
-def f (int a) {
+def h (int a) {
 
 	x = x + a;
 
