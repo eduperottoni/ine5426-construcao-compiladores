@@ -7,6 +7,8 @@ class LexicalAnalyzer {
 public:
 
     void sayHello();
+
+    void getIdentifier();
 };
 
 #endif
