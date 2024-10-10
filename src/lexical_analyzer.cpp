@@ -3,8 +3,6 @@
 
 using namespace std;
 
-
-
 void LexicalAnalyzer::sayHello() {
     cout << "Hello from LexicalAnalyser" << endl;
     cout << findOnMap('\t') << endl;
@@ -27,15 +25,15 @@ LexicalAnalyzer::LexicalAnalyzer() {
 }
 
 bool LexicalAnalyzer::isLetter(const char c) {
-    return true;
+    return findOnMap(c) == LETTER;
 }
 
 bool LexicalAnalyzer::isDigit(const char c) {
-    return true;
+    return findOnMap(c) == DIGIT;
 }
 
 bool LexicalAnalyzer::isWS(const char c) {
-    return true;
+    return isWS(c) == WS;
 }
 
 LexicalAnalyzer::charType LexicalAnalyzer::findOnMap(const char c) {

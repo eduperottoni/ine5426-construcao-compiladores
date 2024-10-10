@@ -1,12 +1,15 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -Wall -g
+CXXFLAGS = -Wall -g -std=c++11
 
 # Output executable
 TARGET = main
+TEST_TARGET = test_lexical_analyzer
+GTEST_LIBS = -lgtest -lgtest_main -pthread
 
 # Source files
 SRCS = main.cpp lexical_analyzer.cpp
+TEST_SRCS =  lexical_analyzer.cpp lexical_analyzer_test.cpp
 
 # Object files (replace .cpp with .o)
 OBJS = $(SRCS:.cpp=.o)
@@ -29,3 +32,11 @@ clean:
 # Run the program after building it
 run: all
 	./$(TARGET)
+
+# Build the tests
+$(TEST_TARGET): $(TEST_SRCS)
+	$(CXX) $(CXXFLAGS) $(TEST_SRCS) $(GTEST_LIBS) -o $(TEST_TARGET)
+
+# Run tests
+tests: $(TEST_TARGET)
+	./$(TEST_TARGET)
